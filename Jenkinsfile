@@ -3,6 +3,7 @@ node{
         git 'https://github.com/jinkaravi504/spring-boot-docker.git'
     }
     stage('comiple-package'){
-        sh 'mvn package'
+        def mvnHome= tool name: 'maven-3.8.6', type: 'maven'
+        sh "${mvnHome}/bin/mvn package"
     }
 }
